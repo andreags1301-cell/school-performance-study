@@ -1,0 +1,15 @@
+# Conda environment for the school value-added analysis.
+# Create it with:   conda env create -f environment.yml
+# Activate it with: conda activate andrea
+name: andrea
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pandas>=2.2
+  - numpy>=1.26
+  - scipy>=1.11
+  - statsmodels>=0.14
+  - matplotlib>=3.8
+  - openpyxl>=3.1
+  - pip
