@@ -29,17 +29,17 @@ questions that are often conflated:
 Prior achievement is decomposed as `X(ij) = (X(ij) − X̄(j)) + X̄(j)`, splitting a
 student's position **within** the school from the school's average **intake**.
 
-| Model  | Specification                                   | Estimator | Composition |
-|--------|-------------------------------------------------|-----------|-------------|
-| **M1** | `Y ~ X`                                          | OLS       | no          |
-| **M2** | `Y ~ (X − X̄) + X̄`                               | OLS       | yes         |
-| **M3** | `Y ~ X + (1 | school)`                           | HLM       | no          |
-| **M4** | `Y ~ (X − X̄) + X̄ + (1 | school)`                | HLM       | yes         |
+| Model | Specification | Estimator | Composition |
+|------|---------------|-----------|-------------|
+| **M1** | `Y ~ X` | OLS | No |
+| **M2** | `Y ~ (X - X̄) + X̄` | OLS | Yes |
+| **M3** | `Y ~ X + (1 \| school)` | HLM | No |
+| **M4** | `Y ~ (X - X̄) + X̄ + (1 \| school)` | HLM | Yes |
 
-Value-added is the school mean residual (M1, M2) or the predicted school random
-effect (M3, M4). Three comparisons isolate each design choice: **M1 vs M3**
-(estimator effect), **M2 vs M4** (estimator effect, with composition), and
-**M3 vs M4** (composition effect).
+Value-added is computed as the school mean residual (M1–M2) or the predicted
+school random effect (M3–M4). Three comparisons isolate each design choice:
+**M1 vs M3** (estimator effect), **M2 vs M4** (estimator effect with
+composition), and **M3 vs M4** (composition effect).
 
 ## Key results
 
@@ -64,19 +64,17 @@ almost identically; the decisive change comes from **composition**:
 | M3 vs M4 (composition)| Mathematics | **0.620**| **148.5**    |
 | M3 vs M4 (composition)| Language    | **0.607**| **149.5**    |
 
-![Model 3 vs Model 4 ranks](assets/fig2_m3_vs_m4_rankings.png)
+![School ranking stability](assets/readme_rank_comparison.png)
 
-Across subjects, Model-4 value-added correlates positively but imperfectly
-(Pearson 0.60, Spearman 0.54): school effectiveness is partly general, partly
+Across subjects, Model-4 value-added remains positively correlated (Pearson =
+0.60, Spearman = 0.54), suggesting that school effectiveness is partly
 subject-specific.
 
-**Conclusion.** The main empirical difference is *not* OLS vs HLM — with the same
-covariates the two agree. What moves rankings is **composition**: once the
-cohort's average intake is controlled for, schools are judged against a different
-benchmark, and many positions change. Value-added estimates are therefore
-conditional, model-based indicators — not neutral league tables, and not causal
-measures of school quality.
-
+**Conclusion.** The main empirical difference is *not* OLS vs HLM — with the
+same covariates the two agree. What changes rankings is **school composition**:
+once the cohort's average intake is controlled for, schools are evaluated
+against a different benchmark. Value-added estimates are therefore conditional,
+model-based indicators rather than causal measures of school quality.
 ## Repository structure
 
 ```
