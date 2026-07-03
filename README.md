@@ -106,7 +106,7 @@ Place the data file at `data/mi_base.xlsx`, then, using **conda**:
 
 ```bash
 conda env create -f environment.yml
-conda activate andrea
+conda activate school-performance-study
 python -m src.main
 ```
 

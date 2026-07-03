@@ -1,7 +1,7 @@
 # Conda environment for the school value-added analysis.
 # Create it with:   conda env create -f environment.yml
-# Activate it with: conda activate andrea
-name: andrea
+# Activate it with: conda activate school-performance-study
+name: school-performance-study
 channels:
   - conda-forge
 dependencies:
